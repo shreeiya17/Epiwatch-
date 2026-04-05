@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f8fafc] dark:bg-[#0a0e1a] text-slate-900 dark:text-white font-sans antialiased;
+  }
+}
+
+html * {
+  /* Fast simple transition for theme toggle */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Exempt charting SVGs from sweeping slow transitions to prevent visual lag */
+.recharts-wrapper * {
+  transition: none !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #e2e8f0;
+}
+
+.dark .recharts-cartesian-grid-horizontal line,
+.dark .recharts-cartesian-grid-vertical line {
+  stroke: #1e293b;
+}
+
+.recharts-text {
+  fill: #64748b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+}
+
+.dark .recharts-text {
+  fill: #94a3b8;
+}
