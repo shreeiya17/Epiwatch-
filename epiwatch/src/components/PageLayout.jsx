@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu } from "lucide-react";
+import BackToTop from "./BackToTop";
 
 export default function PageLayout({ children, sidebarOpen, setSidebarOpen }) {
   return (
@@ -16,6 +17,7 @@ export default function PageLayout({ children, sidebarOpen, setSidebarOpen }) {
       <div className="p-4 md:py-8 md:px-8 w-full max-w-7xl mx-auto flex-1">
         {children}
       </div>
+      <BackToTop/>
     </main>
   );
 }                                                                                               
